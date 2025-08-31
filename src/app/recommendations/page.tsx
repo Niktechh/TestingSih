@@ -147,12 +147,7 @@ const Page = () => {
                     <a className="flex flex-col items-center justify-center border-b-[3px] border-b-[#131712] text-[#131712] pb-[13px] pt-4" href="#">
                       <p className="text-[#131712] text-sm font-bold leading-normal tracking-[0.015em]">{t("reco.tab.irrigation")}</p>
                     </a>
-                    <a className="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#6d8566] pb-[13px] pt-4" href="#">
-                      <p className="text-[#131712] text-sm font-bold leading-normal tracking-[0.015em]">{t("reco.tab.fertilization")}</p>
-                    </a>
-                    <a className="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#6d8566] pb-[13px] pt-4" href="#">
-                      <p className="text-[#131712] text-sm font-bold leading-normal tracking-[0.015em]">{t("reco.tab.pest")}</p>
-                    </a>
+                   
                   </div>
                 </div>
                 <div className="p-4">
