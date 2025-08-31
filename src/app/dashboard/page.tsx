@@ -44,10 +44,10 @@ const sendMessage = async () => {
   ]);
 
   try {
-    const res = await fetch("/api/chatbot", {
+    const res = await fetch("http://127.0.0.1:8000/ask", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ message: text }),
+      body: JSON.stringify({ question: text }),
     });
 
     if (!res.ok) throw new Error("Failed to fetch");
@@ -56,7 +56,7 @@ const sendMessage = async () => {
 
     setmessage((prev) => [
       ...prev,
-      { user: "bot", message: data.reply }
+      { user: "bot", message: data.answer }
     ]);
 
   } catch (err) {

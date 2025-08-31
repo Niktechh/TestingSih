@@ -17,7 +17,7 @@ const DEFAULT_LANG: LanguageCode = "en";
 const STORAGE_KEY = "app_language";
 
 const en: Translations = {
-  "app.title": "AgriSathi",
+  "app.title": "AagriSathi",
   "app.subtitle": "AI-Powered Crop Assistant",
   //my crop section
   "My_crop.title": "My Crops",
