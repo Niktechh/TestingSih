@@ -75,7 +75,7 @@ const CropYieldPredictor = () => {
 
     try {
       // In a real application, replace this URL with your Flask API URL
-      const response = await fetch('http://localhost:5000/predict', {
+      const response = await fetch('http://127.0.0.1:5000', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
