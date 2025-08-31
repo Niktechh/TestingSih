@@ -1,5 +1,5 @@
 "use client"; 
-
+import  { Mail } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation"; 
 import { Button } from "@/Components/ui/button";
@@ -53,7 +53,7 @@ export default function Onboarding() {
   const [step, setStep] = useState<OnboardingStep>("language");
   const [selectedLanguage, setSelectedLanguage] = useState("en");
   const [tutorialSlide, setTutorialSlide] = useState(0);
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [Email, setEmail] = useState("");
   const [otp, setOtp] = useState("");
   const [isOtpSent, setIsOtpSent] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -87,9 +87,16 @@ export default function Onboarding() {
       setStep("language");
     }
   };
+  const isValidEmail = (email: string) => {
+  // Simple regex for basic email validation
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+};
+
+  
 
   const handleSendOtp = async () => {
-    if (!phoneNumber || phoneNumber.length < 10) return;
+    if (!Email ||  !isValidEmail(Email)) return;
     
     setIsLoading(true);
     setTimeout(() => {
@@ -214,11 +221,11 @@ export default function Onboarding() {
       </div>
       
       <h1 className="text-2xl lg:text-3xl font-bold text-foreground mb-3">
-        {isOtpSent ? t("login.verify_otp") : t("login.enter_phone")}
+        {isOtpSent ? t("login.verify_otp") : t("login.enter_email")}
       </h1>
       <p className="text-muted-foreground mb-8 max-w-sm">
         {isOtpSent 
-          ? `${t("login.helper_sent")} +91 ${phoneNumber}`
+          ? `${t("login.helper_sent")} mail ${Email}`
           : t("login.helper_wait")
         }
       </p>
@@ -228,20 +235,20 @@ export default function Onboarding() {
           <div className="space-y-4">
             <div className="flex">
               <div className="flex items-center px-3 border border-r-0 rounded-l-lg bg-muted">
-                <Phone className="h-4 w-4 text-muted-foreground mr-2" />
-                <span className="text-sm font-medium">+91</span>
+                <Mail className="h-5 w-5 text-muted-foreground" /> 
+                
               </div>
               <Input
-                type="tel"
-                placeholder={t("login.placeholder_phone")}
-                value={phoneNumber}
-                onChange={(e) => setPhoneNumber(e.target.value.replace(/\D/g, "").slice(0, 10))}
+                type="text"
+                placeholder={t("login.placeholder_email")}
+                value={Email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="rounded-l-none h-12"
               />
             </div>
             <Button
               onClick={handleSendOtp}
-              disabled={phoneNumber.length < 10 || isLoading}
+              disabled={!isValidEmail(Email) || isLoading}
               className="w-full h-12 gradient-green text-white font-semibold tap-target"
             >
               {isLoading ? t("sending") : t("login.send_otp")}
@@ -269,7 +276,7 @@ export default function Onboarding() {
               onClick={() => setIsOtpSent(false)}
               className="w-full h-10 text-sm"
             >
-              {t("change_phone")}
+              {t("Change_email")}
             </Button>
           </div>
         )}
