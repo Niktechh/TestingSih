@@ -23,13 +23,13 @@ const Page = () => {
         <div className="px-40 flex flex-1 justify-center py-5">
           <div className="layout-content-container flex flex-col w-[512px] py-5 max-w-[960px] flex-1">
             <div className="flex flex-wrap justify-between gap-3 p-4">
-              <p className="text-[#121712] tracking-light text-[32px] font-bold leading-tight min-w-72">Settings &amp; Support</p>
+              <p className="text-[#121712] tracking-light text-[32px] font-bold leading-tight min-w-72">{t("settings.title")}</p>
             </div>
-            <h3 className="text-[#121712] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Language</h3>
+            <h3 className="text-[#121712] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">{t("settings.language")}</h3>
             <div className="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
               <div className="flex flex-col justify-center">
-                <p className="text-[#121712] text-base font-medium leading-normal line-clamp-1">App Language</p>
-                <p className="text-[#668566] text-sm font-normal leading-normal line-clamp-2">English</p>
+                <p className="text-[#121712] text-base font-medium leading-normal line-clamp-1">{t("settings.app_language")}</p>
+                <p className="text-[#668566] text-sm font-normal leading-normal line-clamp-2">{t("settings.english")}</p>
               </div>
               <div className="shrink-0">
                 <div className="text-[#121712] flex size-7 items-center justify-center" data-icon="CaretRight" data-size="24px" data-weight="regular">
@@ -39,11 +39,11 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <h3 className="text-[#121712] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Help</h3>
+            <h3 className="text-[#121712] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">{t("settings.help")}</h3>
             <div className="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
               <div className="flex flex-col justify-center">
-                <p className="text-[#121712] text-base font-medium leading-normal line-clamp-1">FAQs</p>
-                <p className="text-[#668566] text-sm font-normal leading-normal line-clamp-2">Find answers to common questions</p>
+                <p className="text-[#121712] text-base font-medium leading-normal line-clamp-1">{t("settings.faqs")}</p>
+                <p className="text-[#668566] text-sm font-normal leading-normal line-clamp-2">{t("settings.faqs.desc")}</p>
               </div>
               <div className="shrink-0">
                 <div className="text-[#121712] flex size-7 items-center justify-center" data-icon="CaretRight" data-size="24px" data-weight="regular">
@@ -55,8 +55,8 @@ const Page = () => {
             </div>
             <div className="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
               <div className="flex flex-col justify-center">
-                <p className="text-[#121712] text-base font-medium leading-normal line-clamp-1">Voice Notes</p>
-                <p className="text-[#668566] text-sm font-normal leading-normal line-clamp-2">Listen to voice notes for accessibility</p>
+                <p className="text-[#121712] text-base font-medium leading-normal line-clamp-1">{t("settings.voice")}</p>
+                <p className="text-[#668566] text-sm font-normal leading-normal line-clamp-2">{t("settings.voice.desc")}</p>
               </div>
               <div className="shrink-0">
                 <div className="text-[#121712] flex size-7 items-center justify-center" data-icon="CaretRight" data-size="24px" data-weight="regular">
@@ -66,11 +66,11 @@ const Page = () => {
                 </div>
               </div>
             </div>
-            <h3 className="text-[#121712] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Contact Extension Officer</h3>
+            <h3 className="text-[#121712] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">{t("settings.contact")}</h3>
             <div className="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
               <div className="flex flex-col justify-center">
-                <p className="text-[#121712] text-base font-medium leading-normal line-clamp-1">Call</p>
-                <p className="text-[#668566] text-sm font-normal leading-normal line-clamp-2">Call an extension officer</p>
+                <p className="text-[#121712] text-base font-medium leading-normal line-clamp-1">{t("settings.call")}</p>
+                <p className="text-[#668566] text-sm font-normal leading-normal line-clamp-2">{t("settings.call.desc")}</p>
               </div>
               <div className="shrink-0">
                 <div className="text-[#121712] flex size-7 items-center justify-center" data-icon="Phone" data-size="24px" data-weight="regular">
@@ -84,8 +84,8 @@ const Page = () => {
             </div>
             <div className="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
               <div className="flex flex-col justify-center">
-                <p className="text-[#121712] text-base font-medium leading-normal line-clamp-1">Chat</p>
-                <p className="text-[#668566] text-sm font-normal leading-normal line-clamp-2">Chat with an extension officer</p>
+                <p className="text-[#121712] text-base font-medium leading-normal line-clamp-1">{t("settings.chat")}</p>
+                <p className="text-[#668566] text-sm font-normal leading-normal line-clamp-2">{t("settings.chat.desc")}</p>
               </div>
               <div className="shrink-0">
                 <div className="text-[#121712] flex size-7 items-center justify-center" data-icon="ChatCircleDots" data-size="24px" data-weight="regular">

@@ -5,6 +5,7 @@ import AgriPredictSidebar from "@/Components/AgriPredictSidebar";
 import { GiCorn } from "react-icons/gi"
 import { GiBowlOfRice } from "react-icons/gi";
 
+
 import { 
   TrendingUp, 
   Target, 
@@ -18,6 +19,7 @@ import {
   Activity,
   Cloud,
   Wheat,
+  Bot,
   
 } from "lucide-react";
 
@@ -221,7 +223,7 @@ const sendMessage = async () => {
                 <Link href="/predictions" className="group">
                   <div className="app-card hover:shadow-md transition-all duration-200 border-2 border-transparent group-hover:border-green-200">
                     <div className="flex items-start justify-between mb-4">
-                      <div className="w-12 h-12 gradient-green rounded-xl flex items-center justify-center">
+                      <div className="w-12 h-12 bg-[#00943A] rounded-xl flex items-center justify-center">
                         <TrendingUp className="h-6 w-6 text-white" />
                       </div>
                       <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-green-600 transition-colors" />
@@ -384,8 +386,8 @@ const sendMessage = async () => {
           </div>
         </div>
       )}
-      <button onClick={() => setopen(!open)} className=" bottom-4 right-4  fixed w-14 h-14 rounded-full bg-[#529767] text-black flex items-center justify-center shadow-lg hover:bg-[#E5FCEC]  " >
-        {open? "X": "chat"}
+      <button onClick={() => setopen(!open)} className=" bottom-4 right-4  fixed w-14 h-14 rounded-full bg-[#529767] text-white flex items-center justify-center shadow-lg hover:bg-[#E5FCEC] hover:text-black  " >
+        {open? "X": <Bot  />}
       </button>
     </div>
   )
