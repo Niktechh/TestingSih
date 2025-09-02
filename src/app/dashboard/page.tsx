@@ -1,5 +1,5 @@
 "use client"
-import React, { use, useState } from 'react'
+import React, { use, useState, useRef, useEffect } from 'react'
 import Link from "next/link";
 import AgriPredictSidebar from "@/Components/AgriPredictSidebar";
 import { GiCorn } from "react-icons/gi"
@@ -35,6 +35,19 @@ const Page = () => {
       message:"Hello! How can I assist you today?"
     }
   ])
+  
+  // Ref for auto-scrolling to bottom of chat
+  const messagesEndRef = useRef<HTMLDivElement>(null)
+
+  // Auto-scroll function
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  }
+
+  // Auto-scroll when messages change
+  useEffect(() => {
+    scrollToBottom()
+  }, [message])
 
 const sendMessage = async () => {
   const text = input.trim();
@@ -371,6 +384,8 @@ const sendMessage = async () => {
                 </div>
               </div>    
             ))}
+            {/* Invisible div to scroll to */}
+            <div ref={messagesEndRef} />
           </div>
           <div className="input_area p-3 bg-[#e4e4e4] flex items-center gap-2 rounded-b-lg">  
             <input
