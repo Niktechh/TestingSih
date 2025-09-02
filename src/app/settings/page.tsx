@@ -6,10 +6,16 @@ import AgriPredictSidebar from "@/Components/AgriPredictSidebar";
 import { Button } from '@/Components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/Components/ui/select";
 
 
 const Page = () => {
-  const { t } = useI18n() as any;
+  const { t, language, setLanguage } = useI18n() as any;
+  const languages = [
+    { code: "en", label: "English" },
+    { code: "hi", label: "हिंदी" },
+    { code: "or", label: "ଓଡିଆ" },
+  ];
   return (
     <div className="flex h-screen bg-background">
       {/* Sidebar */}
@@ -29,14 +35,19 @@ const Page = () => {
             <div className="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
               <div className="flex flex-col justify-center">
                 <p className="text-[#121712] text-base font-medium leading-normal line-clamp-1">{t("settings.app_language")}</p>
-                <p className="text-[#668566] text-sm font-normal leading-normal line-clamp-2">{t("settings.english")}</p>
+                <p className="text-[#668566] text-sm font-normal leading-normal line-clamp-2">{languages.find(l => l.code === language)?.label}</p>
               </div>
               <div className="shrink-0">
-                <div className="text-[#121712] flex size-7 items-center justify-center" data-icon="CaretRight" data-size="24px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path>
-                  </svg>
-                </div>
+                <Select value={language} onValueChange={(val) => setLanguage(val)}>
+                  <SelectTrigger className="min-w-[140px]">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {languages.map((l) => (
+                      <SelectItem key={l.code} value={l.code}>{l.label}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
             </div>
             <h3 className="text-[#121712] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">{t("settings.help")}</h3>
