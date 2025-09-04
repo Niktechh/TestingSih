@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { ArrowLeft, ChevronDown, Loader2, TrendingUp } from "lucide-react";
 import AgriPredictSidebar from '@/Components/AgriPredictSidebar';
+import { useI18n } from '@/lib/i18n';
 
 
 const CropYieldPredictor = () => {
@@ -20,48 +21,43 @@ const CropYieldPredictor = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [prediction, setPrediction] = useState(null);
   const [error, setError] = useState("");
+   const { t } = useI18n() as any;
 
   const crops = [
     {
-      name: "Wheat",
-      description: "High protein grain crop, winter season",
+      name: t("pred.crop.wheat"),
+      description: t("pred.desc.wheat"),
       icon: "🌾"
     },
     {
-      name: "Rice", 
-      description: "Staple grain crop, requires flooding",
+      name: t("pred.crop.rice"), 
+      description: t("pred.desc.rice"),
       icon: "🌾"
     },
     {
-      name: "Corn",
-      description: "Versatile cereal grain, summer crop",
+      name: t("pred.crop.corn"),
+      description: t("pred.desc.corn"),
       icon: "🌽"
     },
     {
-      name: "Soyabean",
-      description: "Protein-rich legume crop",
+      name: t("pred.crop.soy"),
+      description: t("pred.desc.soy"),
       icon: "🫘"
     },
     {
-      name: "Cotton",
-      description: "Fiber crop for textile industry",
+      name: t("pred.crop.cotton"),
+      description: t("pred.desc.cotton"),
       icon: "🌿"
     },
     {
-      name: "Sugarcane",
-      description: "Sugar producing perennial crop",
+      name: t("pred.crop.sugarcane"),
+      description: t("pred.desc.sugarcane"),
       icon: "🎋"
     }
   ];
 
-  const odishaDistricts = [
-    "Angul", "Balangir", "Balasore", "Bargarh", "Bhadrak", "Boudh", "Cuttack",
-    "Deogarh", "Dhenkanal", "Gajapati", "Ganjam", "Jagatsinghpur", "Jajpur",
-    "Jharsuguda", "Kalahandi", "Kandhamal", "Kendrapara", "Kendujhar", "Khordha",
-    "Koraput", "Malkangiri", "Mayurbhanj", "Nabarangpur", "Nayagarh", "Nuapada",
-    "Puri", "Rayagada", "Sambalpur", "Subarnapur", "Sundargarh"
-  ];
-
+const odishaDistricts = [t("pred.district.angul"),t("pred.district.balangir"),t("pred.district.balasore"),t("pred.district.bargarh"),t("pred.district.bhadrak"), t("pred.district.boudh"),t("pred.district.cuttack"),t("pred.district.deogarh"),t("pred.district.dhenkanal"),t("pred.district.gajapati"),t("pred.district.ganjam"),t("pred.district.jagatsinghpur"),t("pred.district.jajpur"),t("pred.district.jharsuguda"),t("pred.district.kalahandi"),t("pred.district.kandhamal"),t("pred.district.kendrapara"),t("pred.district.kendujhar"),t("pred.district.khordha"),t("pred.district.koraput"),t("pred.district.malkangiri"),t("pred.district.mayurbhanj"),t("pred.district.nabarangpur"),t("pred.district.nayagarh"),t("pred.district.nuapada"),t("pred.district.puri"),t("pred.district.rayagada"),t("pred.district.sambalpur"),t("pred.district.subarnapur"),t("pred.district.sundargarh")
+];
   const handlePrediction = async () => {
     if (!selectedCrop || !district || !rainfall || !temperature || !soilPh || 
         !nitrogen || !phosphorus || !potassium || !irrigationPercent) {
@@ -108,7 +104,7 @@ const CropYieldPredictor = () => {
         accuracy: '92.3%',
         district: district,
         crop: selectedCrop,
-        status: 'success'
+        status: t("pred.success")
       });
       setError("Using simulated data (API not connected)");
     } finally {
@@ -141,18 +137,18 @@ const CropYieldPredictor = () => {
         {/* Header */}
         
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-800 mb-2">🌾 Crop Yield Predictor</h1>
-          <p className="text-gray-600">AI-powered crop yield prediction for Odisha farmers</p>
+          <h1 className="text-4xl font-bold text-gray-800 mb-2">🌾 {t("pred.title")}</h1>
+          <p className="text-gray-600">{t("app.subtitle")}</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Input Form */}
           <div className="bg-white rounded-xl shadow-lg p-6">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Prediction Parameters</h2>
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">{t("pred.para")}</h2>
             
             {/* Crop Selection */}
             <div className="mb-6">
-              <label className="block text-sm font-medium text-gray-700 mb-3">Select Crop</label>
+              <label className="block text-sm font-medium text-gray-700 mb-3">{t("pred.select_crop")}</label>
               <div className="grid grid-cols-2 gap-3">
                 {crops.map((crop) => (
                   <div
@@ -174,13 +170,13 @@ const CropYieldPredictor = () => {
 
             {/* District Selection */}
             <div className="mb-4">
-              <label className="block text-sm font-medium text-gray-700 mb-2">District</label>
+              <label className="block text-sm font-medium text-gray-700 mb-2">{t("pred.param.district")}</label>
               <select
                 value={district}
                 onChange={(e) => setDistrict(e.target.value)}
                 className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
               >
-                <option value="">Select District</option>
+                <option value="">{t("pred.param.selectDistrict")}</option>
                 {odishaDistricts.map((dist) => (
                   <option key={dist} value={dist}>{dist}</option>
                 ))}
@@ -190,22 +186,22 @@ const CropYieldPredictor = () => {
             {/* Environmental Parameters */}
             <div className="grid grid-cols-2 gap-4 mb-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Rainfall (mm)</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">{t("pred.param.rainfall")} </label>
                 <input
                   type="number"
                   value={rainfall}
                   onChange={(e) => setRainfall(e.target.value)}
-                  placeholder="e.g., 1200"
+                  placeholder={t("pred.param.rainfall.eg")}
                   className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Temperature (°C)</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">{t("pred.param.temperature")}</label>
                 <input
                   type="number"
                   value={temperature}
                   onChange={(e) => setTemperature(e.target.value)}
-                  placeholder="e.g., 28"
+                  placeholder={t("pred.param.temperature.eg")}
                   className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 />
               </div>
@@ -214,23 +210,23 @@ const CropYieldPredictor = () => {
             {/* Soil Parameters */}
             <div className="grid grid-cols-2 gap-4 mb-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Soil pH</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">{t("pred.param.soilph")}</label>
                 <input
                   type="number"
                   step="0.1"
                   value={soilPh}
                   onChange={(e) => setSoilPh(e.target.value)}
-                  placeholder="e.g., 6.5"
+                  placeholder={t("pred.param.soilph.eg")}
                   className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Irrigation (%)</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">{t("pred.param.irrigation")}</label>
                 <input
                   type="number"
                   value={irrigationPercent}
                   onChange={(e) => setIrrigationPercent(e.target.value)}
-                  placeholder="e.g., 75"
+                  placeholder={t("pred.param.irrigation.eg")}
                   className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 />
               </div>
@@ -239,32 +235,32 @@ const CropYieldPredictor = () => {
             {/* Nutrient Parameters */}
             <div className="grid grid-cols-3 gap-4 mb-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Nitrogen (kg/ha)</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">{t("pred.param.nitrogen")}</label>
                 <input
                   type="number"
                   value={nitrogen}
                   onChange={(e) => setNitrogen(e.target.value)}
-                  placeholder="e.g., 120"
+                  placeholder={t("pred.param.nitrogen.eg")}
                   className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Phosphorus (kg/ha)</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">{t("pred.param.phosphorus")}</label>
                 <input
                   type="number"
                   value={phosphorus}
                   onChange={(e) => setPhosphorus(e.target.value)}
-                  placeholder="e.g., 60"
+                  placeholder={t("pred.param.phosphorus.eg")}
                   className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Potassium (kg/ha)</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">{t("pred.param.potassium")}</label>
                 <input
                   type="number"
                   value={potassium}
                   onChange={(e) => setPotassium(e.target.value)}
-                  placeholder="e.g., 40"
+                  placeholder={t("pred.param.potassium.eg")}
                   className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 />
               </div>
@@ -280,12 +276,12 @@ const CropYieldPredictor = () => {
                 {isLoading ? (
                   <>
                     <Loader2 className="h-4 w-4 animate-spin" />
-                    Predicting...
+                    {t("pred.predicting")}...
                   </>
                 ) : (
                   <>
                     <TrendingUp className="h-4 w-4" />
-                    Predict Yield
+                    {t("pred.prediction_yield")}
                   </>
                 )}
               </button>
@@ -293,7 +289,7 @@ const CropYieldPredictor = () => {
                 onClick={resetForm}
                 className="px-6 py-3 border border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition-colors"
               >
-                Reset
+                {t("pred.reset")}
               </button>
             </div>
 
@@ -306,18 +302,18 @@ const CropYieldPredictor = () => {
 
           {/* Results Panel */}
           <div className="bg-white rounded-xl shadow-lg p-6">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">Prediction Results</h2>
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">{t("pred.result_title")}</h2>
             
             {!prediction ? (
               <div className="text-center py-12 text-gray-500">
                 <TrendingUp className="h-16 w-16 mx-auto mb-4 text-gray-300" />
-                <p className="text-lg">Fill in the parameters and click "Predict Yield" to see results</p>
+                <p className="text-lg">{t("pred.instructions")}</p>
               </div>
             ) : (
               <div className="space-y-6">
                 {/* Main Result */}
                 <div className="bg-gradient-to-r from-green-500 to-blue-500 text-white p-6 rounded-xl text-center">
-                  <h3 className="text-lg font-semibold mb-2">Predicted Yield</h3>
+                  <h3 className="text-lg font-semibold mb-2">{t("pred.predicted_yield")}</h3>
                   <div className="text-4xl font-bold mb-2">
                     {prediction.predicted_yield.toLocaleString()}
                   </div>
@@ -327,47 +323,47 @@ const CropYieldPredictor = () => {
                 {/* Details */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-700 mb-2">Crop Details</h4>
-                    <p className="text-sm text-gray-600">Crop: {prediction.crop}</p>
-                    <p className="text-sm text-gray-600">District: {prediction.district}</p>
+                    <h4 className="font-semibold text-gray-700 mb-2">{t("pred.crop_details")}</h4>
+                    <p className="text-sm text-gray-600">{t("pred.crop")}: {prediction.crop}</p>
+                    <p className="text-sm text-gray-600">{t("pred.param.district")}: {prediction.district}</p>
                   </div>
                   <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-700 mb-2">Model Info</h4>
-                    <p className="text-sm text-gray-600">Accuracy: {prediction.accuracy}</p>
-                    <p className="text-sm text-gray-600">Status: {prediction.status}</p>
+                    <h4 className="font-semibold text-gray-700 mb-2">{t("pred.model_info")}</h4>
+                    <p className="text-sm text-gray-600">{t("pred.accuracy")}: {prediction.accuracy}</p>
+                    <p className="text-sm text-gray-600">{t("pred.status")}: {prediction.status}</p>
                   </div>
                 </div>
 
                 {/* Input Summary */}
                 <div className="bg-blue-50 p-4 rounded-lg">
-                  <h4 className="font-semibold text-gray-700 mb-3">Input Parameters</h4>
+                  <h4 className="font-semibold text-gray-700 mb-3">{t("pred.input_parameters")}</h4>
                   <div className="grid grid-cols-2 gap-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Rainfall:</span>
+                      <span className="text-gray-600">{t("pred.param.rainfall")}:</span>
                       <span className="font-medium">{rainfall} mm</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Temperature:</span>
+                      <span className="text-gray-600">{t("pred.param.temperature")}:</span>
                       <span className="font-medium">{temperature}°C</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Soil pH:</span>
+                      <span className="text-gray-600">{t("pred.param.soilph")}:</span>
                       <span className="font-medium">{soilPh}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Irrigation:</span>
+                      <span className="text-gray-600">{t("pred.param.irrigation")}:</span>
                       <span className="font-medium">{irrigationPercent}%</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Nitrogen:</span>
+                      <span className="text-gray-600">{t("pred.param.nitrogen")}:</span>
                       <span className="font-medium">{nitrogen} kg/ha</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Phosphorus:</span>
+                      <span className="text-gray-600">{t("pred.param.phosphorus")}:</span>
                       <span className="font-medium">{phosphorus} kg/ha</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Potassium:</span>
+                      <span className="text-gray-600">{t("pred.param.potassium")}:</span>
                       <span className="font-medium">{potassium} kg/ha</span>
                     </div>
                   </div>
@@ -375,22 +371,22 @@ const CropYieldPredictor = () => {
 
                 {/* Recommendations */}
                 <div className="bg-green-50 p-4 rounded-lg">
-                  <h4 className="font-semibold text-gray-700 mb-2">💡 Recommendations</h4>
+                  <h4 className="font-semibold text-gray-700 mb-2">💡 {t("reco.title")}</h4>
                   <ul className="text-sm text-gray-600 space-y-1">
                     {prediction.predicted_yield > 3000 && (
-                      <li>• Excellent yield predicted! Maintain current practices.</li>
+                      <li>• {t("pred.excellent_yield")}</li>
                     )}
                     {prediction.predicted_yield < 2000 && (
-                      <li>• Consider increasing nitrogen or improving irrigation.</li>
+                      <li>• {t("pred.nitrogen_irrigation_warning")}</li>
                     )}
                     {parseFloat(soilPh) < 6.0 && (
-                      <li>• Soil pH is acidic. Consider adding lime to improve pH.</li>
+                      <li>• {t("pred.irrigation_warning")}</li>
                     )}
                     {parseFloat(soilPh) > 8.0 && (
-                      <li>• Soil pH is alkaline. Consider adding organic matter.</li>
+                      <li>• {t("pred.soil_ph_alkaline_warning")}</li>
                     )}
                     {parseFloat(irrigationPercent) < 50 && (
-                      <li>• Low irrigation coverage may limit yield potential.</li>
+                      <li>• {t("pred.irrigation_warning")}</li>
                     )}
                   </ul>
                 </div>

@@ -138,8 +138,8 @@ const Page = () => {
                   </div>
                   {/* Display completion stats for backend team reference */}
                   <div className="text-right text-sm text-gray-600">
-                    <p>Completed: {completionStats.completedCount}/{completionStats.totalRecommendations}</p>
-                    <p>Rate: {completionStats.completionRate}%</p>
+                    <p>{t("reco.completed")}: {completionStats.completedCount}/{completionStats.totalRecommendations}</p>
+                    <p>{t("reco.rate")}: {completionStats.completionRate}%</p>
                   </div>
                 </div>
                 <div className="pb-3">
@@ -167,7 +167,7 @@ const Page = () => {
                         }`}
                       >
                         <span className="truncate">
-                          {completedRecommendations['irrigation_optimize'] ? 'Completed' : t("reco.card.done")}
+                          {completedRecommendations['irrigation_optimize'] ? t("reco.completed") : t("reco.card.done")}
                         </span>
                       </button>
                     </div>
@@ -194,7 +194,7 @@ const Page = () => {
                         }`}
                       >
                         <span className="truncate">
-                          {completedRecommendations['irrigation_moisture'] ? 'Completed' : t("reco.card.done")}
+                          {completedRecommendations['irrigation_moisture'] ? t("reco.completed") : t("reco.card.done")}
                         </span>
                       </button>
                     </div>
@@ -221,7 +221,7 @@ const Page = () => {
                         }`}
                       >
                         <span className="truncate">
-                          {completedRecommendations['irrigation_drainage'] ? 'Completed' : t("reco.card.done")}
+                          {completedRecommendations['irrigation_drainage'] ? t("reco.completed") : t("reco.card.done")}
                         </span>
                       </button>
                     </div>
