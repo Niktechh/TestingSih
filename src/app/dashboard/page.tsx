@@ -283,7 +283,7 @@ const sendMessage = async () => {
                 </Link>
 
                 {/* Soil Health Card */}
-                <Link href="/data_entry" className="group">
+                <Link href="/predictions" className="group">
                   <div className="app-card hover:shadow-md transition-all duration-200 border-2 border-transparent group-hover:border-green-200">
                     <div className="flex items-start justify-between mb-4">
                       <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-green-700 rounded-xl flex items-center justify-center">
