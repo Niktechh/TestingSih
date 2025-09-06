@@ -158,7 +158,7 @@ const sendMessage = async () => {
               <div className="mb-8">
                 <div className="flex items-center justify-between mb-4">
                   <h2 className="text-xl font-bold text-foreground">{t("My_crop.title")}</h2>
-                  <Link href="/data_entry" className="text-sm text-green-600 hover:text-green-700 font-medium">
+                  <Link href="/predictions" className="text-sm text-green-600 hover:text-green-700 font-medium">
                     Manage
                   </Link>
                 </div>

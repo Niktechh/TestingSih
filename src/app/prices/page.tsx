@@ -13,7 +13,7 @@ const Page = () => {
       
       {/* Main Content */}
       <div className="flex-1 overflow-auto">
-        <PlaceholderPage title={t("page.data_entry.title")} description={t("page.data_entry.desc")} />
+        <PlaceholderPage title={t("page.prices.title")} description={t("page.prices.desc")} />
       </div>
     </div>
   )

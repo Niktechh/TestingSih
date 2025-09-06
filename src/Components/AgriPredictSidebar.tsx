@@ -10,8 +10,12 @@ import {
   Target, 
   FileText, 
   Bell, 
-  Settings 
+  Settings, 
+  HandCoins,
+  Gift
 } from 'lucide-react'
+
+
 
 const AgriPredictSidebar = () => {
   const pathname = usePathname()
@@ -37,16 +41,16 @@ const AgriPredictSidebar = () => {
       isActive: pathname === '/recommendations'
     },
     {
-      name: t("sidebar.data_entry"),
-      href: '/data_entry',
-      icon: FileText,
-      isActive: pathname === '/data_entry'
+      name: t("sidebar.prices"),
+      href: '/prices',
+      icon: HandCoins,
+      isActive: pathname === '/prices'
     },
     {
-      name: t('sidebar.notifications'),
-      href: '/notifications',
-      icon: Bell,
-      isActive: pathname === '/notifications'
+      name: t('sidebar.redeem'),
+      href: '/redeem',
+      icon: Gift,
+      isActive: pathname === '/redeem'
     },
     {
       name: t('sidebar.settings'),
