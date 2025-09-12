@@ -187,7 +187,7 @@ const en: Translations = {
       "pred.nitrogen_irrigation_warning": "Consider increasing nitrogen or improving irrigation.",
     "pred.soil_ph_alkaline_warning": "Soil pH is alkaline. Consider adding organic matter.",
     
-  "next": "Next",
+  
   // Recommendations
   "reco.title": "Recommendations",
   "reco.subtitle": "Based on your field data and crop predictions, here are some recommendations to improve your yield.",
@@ -385,7 +385,7 @@ const hi: Translations = {
     "pred.irrigation_warning": "कम सिंचाई कवरेज उपज क्षमता को सीमित कर सकता है।",
      "pred.nitrogen_irrigation_warning": "नाइट्रोजन बढ़ाने या सिंचाई सुधारने पर विचार करें।",
     "pred.soil_ph_alkaline_warning": "मिट्टी का pH क्षारीय है। जैविक पदार्थ जोड़ने पर विचार करें।",
-  "next": "आगे",
+  
   "reco.title": "सिफारिशें",
   "reco.subtitle": "आपके खेत के डेटा और फ़सल पूर्वानुमानों के आधार पर, उपज सुधारने के लिए ये सुझाव हैं।",
   "reco.tab.irrigation": "सिंचाई",
@@ -582,7 +582,7 @@ const orLang: Translations = {
     "pred.irrigation_warning": "କମ୍ ସିଚାଇ କଭରେଜ୍‌ ଉତ୍ପାଦନ କ୍ଷମତାକୁ ସୀମିତ କରିପାରେ।",
     "pred.nitrogen_irrigation_warning": "ନାଇଟ୍ରୋଜେନ୍ ବୃଦ୍ଧି କରିବା କିମ୍ବା ସିଚାଇ ସୁଧାରିବା ବିଚାର କରନ୍ତୁ।",
     "pred.soil_ph_alkaline_warning": "ମାଟିର pH ଆଲକାଲାଇନ୍ ଅଛି। ସଙ୍ଗଠିତ ପଦାର୍ଥ ଯୋଗ କରିବା ବିଚାର କରନ୍ତୁ।",
-  "next": "ପରବର୍ତ୍ତୀ",
+  
   "reco.title": "ସୁପାରିଶ",
   "reco.subtitle": "ଆପଣଙ୍କ ମାଇଦାନ ତଥ୍ୟ ଏବଂ ଫସଲ ପୂର୍ବାନୁମାନ ଆଧାରରେ, ଉତ୍ପାଦକତା ବଢ଼ାଇବା ପାଇଁ ଏହି ପରାମର୍ଶଗୁଡ଼ିକ।",
   "reco.tab.irrigation": "ସିଚାଇ",
