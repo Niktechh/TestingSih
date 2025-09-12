@@ -5,6 +5,17 @@ import AgriPredictSidebar from '@/Components/AgriPredictSidebar';
 import { useI18n } from '@/lib/i18n';
 
 
+//prediction interface
+interface Prediction {
+  predicted_yield: number;
+  unit: string;
+  accuracy: string;
+  district: string;
+  crop: string;
+  status: string;
+}
+
+
 const CropYieldPredictor = () => {
   // Form state
   const [selectedCrop, setSelectedCrop] = useState("");
@@ -19,7 +30,7 @@ const CropYieldPredictor = () => {
   
   // UI state
   const [isLoading, setIsLoading] = useState(false);
-  const [prediction, setPrediction] = useState(null);
+ const [prediction, setPrediction] = useState<Prediction | null>(null);
   const [error, setError] = useState("");
    const { t } = useI18n() as any;
 
@@ -93,7 +104,7 @@ const odishaDistricts = [t("pred.district.angul"),t("pred.district.balangir"),t(
         throw new Error('Prediction failed');
       }
 
-      const result = await response.json();
+      const result = await response.json() as Prediction;
       setPrediction(result);
     } catch (err) {
       // For demo purposes, we'll simulate a prediction
@@ -315,22 +326,23 @@ const odishaDistricts = [t("pred.district.angul"),t("pred.district.balangir"),t(
                 <div className="bg-gradient-to-r from-green-500 to-blue-500 text-white p-6 rounded-xl text-center">
                   <h3 className="text-lg font-semibold mb-2">{t("pred.predicted_yield")}</h3>
                   <div className="text-4xl font-bold mb-2">
-                    {prediction.predicted_yield.toLocaleString()}
+                    {prediction ? prediction.predicted_yield.toLocaleString() : ''}
+
                   </div>
-                  <p className="text-green-100">{prediction.unit}</p>
+                  <p className="text-green-100">{prediction?.unit}</p>
                 </div>
 
                 {/* Details */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <h4 className="font-semibold text-gray-700 mb-2">{t("pred.crop_details")}</h4>
-                    <p className="text-sm text-gray-600">{t("pred.crop")}: {prediction.crop}</p>
-                    <p className="text-sm text-gray-600">{t("pred.param.district")}: {prediction.district}</p>
+                    <p className="text-sm text-gray-600">{t("pred.crop")}: {prediction?.crop}</p>
+                    <p className="text-sm text-gray-600">{t("pred.param.district")}: {prediction?.district}</p>
                   </div>
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <h4 className="font-semibold text-gray-700 mb-2">{t("pred.model_info")}</h4>
-                    <p className="text-sm text-gray-600">{t("pred.accuracy")}: {prediction.accuracy}</p>
-                    <p className="text-sm text-gray-600">{t("pred.status")}: {prediction.status}</p>
+                    <p className="text-sm text-gray-600">{t("pred.accuracy")}: {prediction?.accuracy}</p>
+                    <p className="text-sm text-gray-600">{t("pred.status")}: {prediction?.status}</p>
                   </div>
                 </div>
 
