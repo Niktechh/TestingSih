@@ -1,7 +1,9 @@
 "use client"
-import React, { use, useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import Link from "next/link";
 import AgriPredictSidebar from "@/Components/AgriPredictSidebar";
+import { Sheet, SheetContent, SheetTrigger } from "@/Components/ui/sheet";
+import { Menu } from "lucide-react";
 import { GiCorn } from "react-icons/gi"
 import { GiBowlOfRice } from "react-icons/gi";
 
@@ -87,19 +89,30 @@ const sendMessage = async () => {
   const [open,setopen ] = useState(false)
   const { t } = useI18n() as any;
   return (
-    <div className="flex h-screen bg-background">
+    <div className="flex min-h-screen bg-background">
       {/* Sidebar */}
       <AgriPredictSidebar />
       
       {/* Main Content */}
       <div className="flex-1 overflow-auto">
-        <div className="min-h-screen bg-background pb-20 lg:pb-4">
+        <div className="min-h-screen bg-background pb-24 lg:pb-4">
           {/* Header Section */}
-          <div className="bg-gradient-to-br from-green-50 to-green-100 px-4 py-6 lg:px-8">
-            <div className="max-w-7xl mx-auto  ">
+          <div className="bg-gradient-to-br from-green-50 to-green-100 px-4 py-6 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto">
+              {/* Mobile top bar */}
+              <div className="md:hidden mb-4 flex items-center justify-between">
+                <Sheet>
+                  <SheetTrigger className="inline-flex items-center justify-center rounded-md p-2 text-green-800 hover:bg-green-100">
+                    <Menu className="h-6 w-6" />
+                  </SheetTrigger>
+                  <SheetContent side="left" className="p-0">
+                    <AgriPredictSidebar showOnMobile />
+                  </SheetContent>
+                </Sheet>
+              </div>
               {/* Greeting */}
               <div className="mb-6">
-                <h1 className="text-2xl lg:text-3xl font-bold text-green-800 mb-1">
+                <h1 className="text-2xl sm:text-3xl font-bold text-green-800 mb-1">
                   {t("home.greeting")}
                 </h1>
                 <p className="text-green-700"> 
@@ -114,7 +127,7 @@ const sendMessage = async () => {
                   <Sun className="h-6 w-6 text-yellow-600" />
                 </div>
                 
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   <div className="flex items-center gap-2">
                     <Thermometer className="h-4 w-4 text-red-500" />
                     <div>
@@ -152,7 +165,7 @@ const sendMessage = async () => {
           </div>
 
           {/* Main Dashboard Cards */}
-          <div className="px-4 py-6 lg:px-8">
+          <div className="px-4 py-6 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
               {/* My Crops Section */}
               <div className="mb-8">
@@ -163,7 +176,7 @@ const sendMessage = async () => {
                   </Link>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                   {/* Wheat Card */}
                   <div className="bg-white rounded-lg p-4 border border-gray-200">
                     <div className="flex items-center gap-3 mb-3">

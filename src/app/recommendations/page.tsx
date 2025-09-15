@@ -1,11 +1,12 @@
 "use client"
 import PlaceholderPage from '@/Components/PlaceholderPage'
 import { Button } from '@/Components/ui/button'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, Menu } from 'lucide-react'
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useI18n } from "@/lib/i18n";
 import AgriPredictSidebar from "@/Components/AgriPredictSidebar";
+import { Sheet, SheetContent, SheetTrigger } from "@/Components/ui/sheet";
 
 const Page = () => {
   const { t } = useI18n() as any;
@@ -129,8 +130,19 @@ const Page = () => {
       <div className="flex-1 overflow-auto">
         <div className="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden font-family: Manrope">
           <div className="layout-container flex h-full grow flex-col">
-            <div className="px-40 flex flex-1 justify-center py-5">
+            <div className="px-4 sm:px-6 lg:px-10 xl:px-40 flex flex-1 justify-center py-5">
               <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
+                {/* Mobile top bar */}
+                <div className="md:hidden mb-2 flex items-center justify-between">
+                  <Sheet>
+                    <SheetTrigger className="inline-flex items-center justify-center rounded-md p-2 text-green-800 hover:bg-green-100">
+                      <Menu className="h-6 w-6" />
+                    </SheetTrigger>
+                    <SheetContent side="left" className="p-0">
+                      <AgriPredictSidebar showOnMobile />
+                    </SheetContent>
+                  </Sheet>
+                </div>
                 <div className="flex flex-wrap justify-between gap-3 p-4">
                   <div className="flex min-w-72 flex-col gap-3">
                     <p className="text-[#131712] tracking-light text-[32px] font-bold leading-tight">{t("reco.title")}</p>

@@ -7,6 +7,8 @@ import { Button } from '@/Components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/Components/ui/select";
+import { Sheet, SheetContent, SheetTrigger } from "@/Components/ui/sheet";
+import { Menu } from "lucide-react";
 
 
 const Page = () => {
@@ -17,7 +19,7 @@ const Page = () => {
     { code: "or", label: "ଓଡିଆ" },
   ];
   return (
-    <div className="flex h-screen bg-background">
+    <div className="flex min-h-screen bg-background">
       {/* Sidebar */}
       <AgriPredictSidebar />
       
@@ -25,11 +27,22 @@ const Page = () => {
       <div className="flex-1 overflow-auto">
         <div className="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden">
       <div className="layout-container flex h-full grow flex-col">
-    
-        <div className="px-40 flex flex-1 justify-center py-5">
-          <div className="layout-content-container flex flex-col w-[512px] py-5 max-w-[960px] flex-1">
+
+        <div className="px-4 sm:px-6 lg:px-10 xl:px-40 flex flex-1 justify-center py-5">
+          <div className="layout-content-container flex flex-col w-full max-w-[960px] py-5">
+            {/* Mobile top bar */}
+            <div className="md:hidden flex items-center justify-between px-2 pb-2">
+              <Sheet>
+                <SheetTrigger className="inline-flex items-center justify-center rounded-md p-2 text-green-800 hover:bg-green-100">
+                  <Menu className="h-6 w-6" />
+                </SheetTrigger>
+                <SheetContent side="left" className="p-0">
+                  <AgriPredictSidebar showOnMobile />
+                </SheetContent>
+              </Sheet>
+            </div>
             <div className="flex flex-wrap justify-between gap-3 p-4">
-              <p className="text-[#121712] tracking-light text-[32px] font-bold leading-tight min-w-72">{t("settings.title")}</p>
+              <p className="text-[#121712] tracking-light text-2xl sm:text-[32px] font-bold leading-tight">{t("settings.title")}</p>
             </div>
             <h3 className="text-[#121712] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">{t("settings.language")}</h3>
             <div className="flex items-center gap-4 bg-white px-4 min-h-[72px] py-2 justify-between">
@@ -39,7 +52,7 @@ const Page = () => {
               </div>
               <div className="shrink-0">
                 <Select value={language} onValueChange={(val) => setLanguage(val)}>
-                  <SelectTrigger className="min-w-[140px]">
+                  <SelectTrigger className="min-w-[140px] max-w-[60vw] sm:max-w-none">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -114,7 +127,7 @@ const Page = () => {
     </div>
       </div>
       {/* Back to Dashboard Button */}
-      <div className="fixed bottom-4 left-1/2 transform -translate-x-[-3/5] w-full max-w-md px-4">
+      <div className="fixed bottom-4 left-0 right-0 mx-auto w-full max-w-md px-4">
         <Link href={"./dashboard"}>
           <Button className="gap-2 gradient-green text-white font-semibold tap-target">
             <ArrowLeft className="h-4 w-4" />

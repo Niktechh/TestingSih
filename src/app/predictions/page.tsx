@@ -1,8 +1,9 @@
 "use client"
 import React, { useState } from 'react';
-import { ArrowLeft, ChevronDown, Loader2, TrendingUp } from "lucide-react";
+import { ArrowLeft, ChevronDown, Loader2, TrendingUp, Menu } from "lucide-react";
 import AgriPredictSidebar from '@/Components/AgriPredictSidebar';
 import { useI18n } from '@/lib/i18n';
+import { Sheet, SheetContent, SheetTrigger } from "@/Components/ui/sheet";
 
 
 //prediction interface
@@ -148,9 +149,20 @@ const odishaDistricts = [t("pred.district.angul"),t("pred.district.balangir"),t(
     <div className="flex h-full bg-background">
       <AgriPredictSidebar  />
    
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 p-4">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50 p-4 flex-1">
        
       <div className=" mx-auto">
+        {/* Mobile top bar */}
+        <div className="md:hidden mb-4 flex items-center justify-between">
+          <Sheet>
+            <SheetTrigger className="inline-flex items-center justify-center rounded-md p-2 text-green-800 hover:bg-green-100">
+              <Menu className="h-6 w-6" />
+            </SheetTrigger>
+            <SheetContent side="left" className="p-0">
+              <AgriPredictSidebar showOnMobile />
+            </SheetContent>
+          </Sheet>
+        </div>
         {/* Header */}
         
         <div className="text-center mb-8">

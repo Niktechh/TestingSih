@@ -17,7 +17,11 @@ import {
 
 
 
-const AgriPredictSidebar = () => {
+type AgriPredictSidebarProps = {
+  showOnMobile?: boolean
+}
+
+const AgriPredictSidebar = ({ showOnMobile = false }: AgriPredictSidebarProps) => {
   const pathname = usePathname()
   const { t } = useI18n() as any
 
@@ -61,7 +65,7 @@ const AgriPredictSidebar = () => {
   ]
 
   return (
-    <aside className="w-64 min-h-screen bg-white border-r border-gray-200 flex flex-col">
+    <aside className={`${showOnMobile ? 'flex w-64' : 'hidden md:flex md:w-64'} min-h-screen bg-white border-r border-gray-200 flex-col`}>
       {/* Header/Branding */}
       <div className="p-6 border-b border-gray-100">
         <div className="flex flex-col">
