@@ -102,7 +102,7 @@ const sendMessage = async () => {
                 <h1 className="text-2xl lg:text-3xl font-bold text-green-800 mb-1">
                   {t("home.greeting")}
                 </h1>
-                <p className="text-green-700">
+                <p className="text-green-700"> 
                   {t("home.sub")}
                 </p>
               </div>

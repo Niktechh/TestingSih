@@ -17,6 +17,12 @@ interface Prediction {
 
 
 const CropYieldPredictor = () => {
+  //api url store
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+
+
+
   // Form state
   const [selectedCrop, setSelectedCrop] = useState("");
   const [district, setDistrict] = useState("");
@@ -82,7 +88,7 @@ const odishaDistricts = [t("pred.district.angul"),t("pred.district.balangir"),t(
 
     try {
       // In a real application, replace this URL with your Flask API URL
-      const response = await fetch('http://127.0.0.1:5000', {
+      const response = await fetch( API_URL!, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
