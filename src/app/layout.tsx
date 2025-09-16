@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 
 
 export const metadata: Metadata = {
-  title: "My Next App",
+  title: "AagriSathi",
   description: "Farming App with AI features",
 };
 
