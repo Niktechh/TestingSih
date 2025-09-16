@@ -172,10 +172,11 @@ const en: Translations = {
     "pred.prediction": "Prediction",
     "pred.reset": "Reset",
     "pred.predicting": "Predicting",
+    
 
     // api calling 
         "pred.result_title": "Prediction Results",
-    "pred.result_instructions": "Fill in the parameters and click \"Predict Yield\" to see results",
+    "pred.result_instructions": "Fill in the parameters and click \"Prediction Yield\" to see results",
     "pred.predicted_yield": "Predicted Yield",
     "pred.crop_details": "Crop Details",
     "pred.model_info": "Model Info",

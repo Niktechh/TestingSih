@@ -336,7 +336,7 @@ const odishaDistricts = [t("pred.district.angul"),t("pred.district.balangir"),t(
             {!prediction ? (
               <div className="text-center py-12 text-gray-500">
                 <TrendingUp className="h-16 w-16 mx-auto mb-4 text-gray-300" />
-                <p className="text-lg">{t("pred.instructions")}</p>
+                <p className="text-lg">{t("pred.result_instructions")}</p>
               </div>
             ) : (
               <div className="space-y-6">
