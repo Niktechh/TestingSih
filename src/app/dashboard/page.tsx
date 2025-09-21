@@ -382,7 +382,7 @@ const sendMessage = async () => {
           </div>
         </div>
       </div>
-      nikhil
+      
 
     
     </div>
