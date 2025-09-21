@@ -235,7 +235,7 @@ const en: Translations = {
   "prices.sum2": "Real-time crop prices and insights",
   "prices.crop.title": "Crop Prices",
   "prices.quintals": "quintal",
-
+  "prices.sell": "Sell  Produce",
 
   
   // Settings
@@ -460,6 +460,8 @@ const hi: Translations = {
 "prices.sum2": "रीयल-टाइम फसल कीमतें और जानकारी",
 "prices.crop.title": "फसल कीमतें",
 "prices.quintals": "क्विंटल",
+"prices.sell": "उत्पाद बेचें",
+
 
 
 
@@ -683,12 +685,16 @@ const orLang: Translations = {
 "redeem.card3": "ଉଚ୍ଚ ଉତ୍ପାଦନ ବୀଜ",
 "redeem.card4": "ସିଚାଇ ସିଷ୍ଟମ୍",
 "redeem.points": "ପଏଁଟ୍",
-"prices.title": "कीमतें",
-"prices.mark": "बाजार अपडेट",
-"prices.sum1": "दिल्ली में आज गेहूं की कीमतें 5% बढ़ीं",
-"prices.sum2": "रीयल-टाइम फसल कीमतें और जानकारी",
-"prices.crop.title": "फसल कीमतें",
-"prices.quintals": "क्विंटल",
+
+"prices.title": "ମୂଲ୍ୟ",
+"prices.mark": "ବଜାର ଅଦ୍ୟତନ",
+"prices.sum1": "ଦିଲ୍ଲୀରେ ଆଜି ଗହମ ମୂଲ୍ୟ 5% ବୃଦ୍ଧି ପାଇଲା",
+"prices.sum2": "ରିୟଲ-ଟାଇମ୍ ଫସଲ ମୂଲ୍ୟ ଏବଂ ତଥ୍ୟ",
+"prices.crop.title": "ଫସଲ ମୂଲ୍ୟ",
+"prices.quintals": "କ୍ୱିଣ୍ଟାଲ୍",
+"prices.sell": "ପ୍ରସ୍ତୁତ ପ୍ରତିଷ୍ଠାନ ବିକ୍ରୟ କରନ୍ତୁ",
+
+
 
 
   "settings.title": "ସେଟିଂସ୍ ଏବଂ ସହାୟତା",

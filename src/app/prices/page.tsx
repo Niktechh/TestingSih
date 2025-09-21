@@ -165,7 +165,7 @@ const Page = () => {
                   {/* Action Button */}
                   <div className="flex px-4 py-3">
                     <button className="flex w-full items-center justify-center rounded-xl h-12 bg-[#208823] text-white font-bold">
-                      Sell Produce
+                      {t("prices.sell")}
                     </button>
                   </div>
                 </div>
