@@ -204,6 +204,40 @@ const en: Translations = {
   "reco.card.drainage.desc": "Ensure proper drainage in your fields to avoid waterlogging, which can lead to root rot and reduced yields.",
   "reco.completed": "Completed",
     "reco.rate": "Rate",
+
+  //redeem
+
+
+  "redeem.title": "Redeem",
+  "points.summary": "Points Summary",
+  "redeem.subtitle": "Redeem points for farming supplies and equipment.",
+  "redeem.Categories": "Categories",
+  "redeem.seeds": "Seeds",
+  "redeem.tools": "Tools",
+  "redeem.Fertilizer": "Fertilizer",
+  "redeem.Equipment": "Equipment",
+  "redeem.options": "Redeem Options",
+  "redeem.offers": "Special Offers",
+  "redeem.discount": "20% off Seed Pack this week!",
+  "redeem.off_summary": "Limited time offer",
+  "redeem.card1": "Organic Fertilizer",
+  "redeem.card2": "Tractor Tool Set",
+  "redeem.card3": "High-Yield Seeds",
+  "redeem.card4": "Irrigation System",
+  "redeem.points": "Points ",
+
+
+
+  //prices
+  "prices.title": "Prices",
+  "prices.mark": "Market update",
+  "prices.sum1": "Wheat prices rose 5% today in Delhi",
+  "prices.sum2": "Real-time crop prices and insights",
+  "prices.crop.title": "Crop Prices",
+  "prices.quintals": "quintal",
+
+
+  
   // Settings
   "settings.title": "Settings & Support",
   "settings.language": "Language",
@@ -401,6 +435,40 @@ const hi: Translations = {
   "reco.card.drainage.desc": "खेत में उचित जल निकासी सुनिश्चित करें ताकि जलभराव और जड़ सड़न से बचा जा सके।",
      "reco.completed": "पूरा हुआ",
     "reco.rate": "दर",
+
+"redeem.title": "रिडीम",
+"points.summary": "अंक सारांश",
+"redeem.subtitle": "खेती की सामग्री और उपकरणों के लिए अंक रिडीम करें।",
+"redeem.Categories": "श्रेणियाँ",
+"redeem.seeds": "बीज",
+"redeem.tools": "उपकरण",
+"redeem.Fertilizer": "उर्वरक",
+"redeem.Equipment": "उपकरण",
+"redeem.options": "रिडीम विकल्प",
+"redeem.offers": "विशेष ऑफ़र",
+"redeem.discount": "इस सप्ताह बीज पैक पर 20% छूट!",
+"redeem.off_summary": "सीमित समय के लिए ऑफ़र",
+"redeem.card1": "जैविक उर्वरक",
+"redeem.card2": "ट्रैक्टर उपकरण सेट",
+"redeem.card3": "उच्च उपज बीज",
+"redeem.card4": "सिंचाई प्रणाली",
+"redeem.points": "अंक",
+
+"prices.title": "कीमतें",
+"prices.mark": "बाजार अपडेट",
+"prices.sum1": "दिल्ली में आज गेहूं की कीमतें 5% बढ़ीं",
+"prices.sum2": "रीयल-टाइम फसल कीमतें और जानकारी",
+"prices.crop.title": "फसल कीमतें",
+"prices.quintals": "क्विंटल",
+
+
+
+
+
+
+
+
+
   "settings.title": "सेटिंग्स और सहायता",
   "settings.language": "भाषा",
   "settings.app_language": "ऐप भाषा",
@@ -598,6 +666,31 @@ const orLang: Translations = {
   "reco.card.drainage.desc": "ଜଳଜମା ଏବଂ ମୂଳ ପଚା ରୋକିବା ପାଇଁ ଠିକ୍ ଡ୍ରେନେଜ୍ ସୁନିଶ୍ଚିତ କରନ୍ତୁ।",
      "reco.completed": "ସମ୍ପୂର୍ଣ୍ଣ",
     "reco.rate": "ହାର",
+    "redeem.title": "ପୁନଃପ୍ରାପ୍ତି",
+"points.summary": "ପଏଁଟ୍ ସାରାଂଶ",
+"redeem.subtitle": "କୃଷି ସାମଗ୍ରୀ ଏବଂ ଉପକରଣ ପାଇଁ ପଏଁଟ୍ ସମ୍ପାଦନ କରନ୍ତୁ।",
+"redeem.Categories": "ଶ୍ରେଣୀଗୁଡିକ",
+"redeem.seeds": "ବୀଜ",
+"redeem.tools": "ଉପକରଣ",
+"redeem.Fertilizer": "ଉର୍ବରକ",
+"redeem.Equipment": "ଉପକରଣ",
+"redeem.options": "ପୁନଃପ୍ରାପ୍ତି ବିକଳ୍ପ",
+"redeem.offers": "ବିଶେଷ ପ୍ରସ୍ତାବ",
+"redeem.discount": "ଏହି ସପ୍ତାହରେ ବୀଜ ପ୍ୟାକରେ 20% ଛୁଟ!",
+"redeem.off_summary": "ସୀମିତ ସମୟରେ ପ୍ରସ୍ତାବ",
+"redeem.card1": "ଜୈ୵ିକ ଉର୍ବରକ",
+"redeem.card2": "ଟ୍ରାକ୍ଟର ଉପକରଣ ସେଟ୍",
+"redeem.card3": "ଉଚ୍ଚ ଉତ୍ପାଦନ ବୀଜ",
+"redeem.card4": "ସିଚାଇ ସିଷ୍ଟମ୍",
+"redeem.points": "ପଏଁଟ୍",
+"prices.title": "कीमतें",
+"prices.mark": "बाजार अपडेट",
+"prices.sum1": "दिल्ली में आज गेहूं की कीमतें 5% बढ़ीं",
+"prices.sum2": "रीयल-टाइम फसल कीमतें और जानकारी",
+"prices.crop.title": "फसल कीमतें",
+"prices.quintals": "क्विंटल",
+
+
   "settings.title": "ସେଟିଂସ୍ ଏବଂ ସହାୟତା",
   "settings.language": "ଭାଷା",
   "settings.app_language": "ଆପ୍ ଭାଷା",
