@@ -17,6 +17,8 @@ const Page = () => {
     { code: "en", label: "English" },
     { code: "hi", label: "हिंदी" },
     { code: "or", label: "ଓଡିଆ" },
+    { code: "ml", label: "മലയാളം"},
+
   ];
   return (
     <div className="flex min-h-screen bg-background">

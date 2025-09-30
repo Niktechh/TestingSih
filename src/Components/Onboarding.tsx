@@ -22,6 +22,7 @@ const languages = [
   { code: "hi", name: "Hindi", native: "हिंदी" },
 
   { code: "or", name: "Odia", native: "ଓଡ଼ିଆ" }, 
+  { code: "ml", name: "Malayalam", native: "മലയാളം" }, 
 ];
 
 const tutorialSlides = [
